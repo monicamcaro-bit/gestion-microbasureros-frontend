@@ -1,0 +1,264 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: #f4f7f4;
+  color: #26352b;
+}
+
+.encabezado {
+  background: #24743b;
+  color: white;
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.encabezado h1 {
+  margin: 0 0 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px;
+  background: white;
+}
+
+
+.menu a {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid #b9d3c0;
+  border-radius: 8px;
+  background: white;
+  color: #245a33;
+  text-decoration: none;
+}
+
+.menu a.active,
+.menu a:hover {
+  background: #24743b;
+  color: white;
+}
+
+.menu a:focus-visible {
+  outline: 3px solid #f1b544;
+  outline-offset: 3px;
+}
+
+
+.contenido {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.tarjeta {
+  padding: 24px;
+  background: white;
+  border: 1px solid #dce7df;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #00000010;
+}
+
+.tarjeta strong {
+  font-size: 36px;
+  color: #24743b;
+}
+
+.pie {
+  padding: 20px;
+  text-align: center;
+  background: #e4ede6;
+}
+
+@media (max-width: 700px) {
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .encabezado h1 {
+    font-size: 24px;
+  }
+
+  .contenido {
+    padding: 20px 16px;
+  }
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.filtros > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 220px;
+}
+
+.filtros label {
+  font-weight: 600;
+}
+
+.filtros input,
+.filtros select {
+  padding: 12px;
+  border: 1px solid #b9d3c0;
+  border-radius: 8px;
+  font: inherit;
+  background: white;
+  color: #24382b;
+}
+
+.filtros input:focus-visible,
+.filtros select:focus-visible {
+  outline: 3px solid #f1b544;
+  outline-offset: 2px;
+}
+
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.tabla-contenedor table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.tabla-contenedor caption {
+  text-align: left;
+  padding: 12px 0;
+  font-weight: 600;
+}
+
+.tabla-contenedor th,
+.tabla-contenedor td {
+  padding: 14px;
+  border: 1px solid #d9e5dc;
+  text-align: left;
+}
+
+.tabla-contenedor th {
+  background: #24743b;
+  color: white;
+}
+
+.tabla-contenedor tbody tr:nth-child(even) {
+  background: #f2f7f3;
+}
+
+@media (max-width: 600px) {
+  .filtros {
+    flex-direction: column;
+  }
+
+  .tabla-contenedor th,
+  .tabla-contenedor td {
+    padding: 10px;
+  }
+}
+
+.formulario-panel {
+  margin-top: 40px;
+  padding: 28px;
+  background: white;
+  border: 1px solid #d9e5dc;
+  border-radius: 12px;
+}
+
+.formulario-panel h3 {
+  margin-top: 0;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.campo-formulario label {
+  font-weight: 600;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #b9d3c0;
+  border-radius: 8px;
+  font: inherit;
+  color: #24382b;
+  background: white;
+}
+
+.campo-formulario input:focus-visible,
+.campo-formulario select:focus-visible,
+.campo-formulario textarea:focus-visible,
+.boton-guardar:focus-visible {
+  outline: 3px solid #f1b544;
+  outline-offset: 2px;
+}
+
+.campo-formulario [aria-invalid="true"] {
+  border: 2px solid #b42318;
+}
+
+.error {
+  margin: 0;
+  color: #b42318;
+  font-size: 0.9rem;
+}
+
+.boton-guardar {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #24743b;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.boton-guardar:hover {
+  background: #19582c;
+}
+
+.mensaje-exito {
+  color: #19632f;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .formulario-panel {
+    padding: 18px;
+  }
+}
